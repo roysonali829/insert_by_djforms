@@ -19,6 +19,10 @@ def insert_student(request):
             SO = Student.objects.get_or_create(Sname=Sname,Sid=Sid,Semail=Semail)[0]
             SO.save()
             QSSO = Student.objects.all()
+            QSSO = Student.objects.filter(Sname='abc').update(Sname='bristi')
+            QSSO = Student.objects.filter(Sname='bcd').update(Sname='abc')
+            QSSO = Student.objects.filter(Sname='efg').delete()
+            QSSO = Student.objects.all()
             d1 = {'QSSO':QSSO}
             return render(request,'display_student.html',d1)
     return render(request,'insert_student.html',d)
