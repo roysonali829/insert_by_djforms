@@ -22,3 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('insert_student/',insert_student,name='insert_student'),
 ]
+
+
+
+admin.site.site_header = 'Student'
+admin.site.site_title = 'Django'
+admin.site.index_title = 'Python'
